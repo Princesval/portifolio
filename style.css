@@ -1,22 +1,10 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root {
-    --branco: #FFFFFF;
-    --platina:#C2C2C2;
-    --azul: #081D49;
-    --azul2: #375DA9;
-    --grafite: #0A0A0A;
-    --preto: #000000;
-}
-
-.darkmode {
-    --branco: #000000;
-    --platina:#0A0A0A;
-    --azul: #375DA9;
-    --azul2: #081D49;
-    --grafite: #C2C2C2;
-    --preto: #FFFFFF;
+:root{
+    --branco: hsl(0, 0%, 100%);
+    --preto: hsl(0, 0%, 0%);
+    --pretologo: hsla(0, 0%, 0%, 0.400);
 }
 
 * {
@@ -25,184 +13,163 @@
 }
 
 body {
+    width: 100%;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    background-color: var(--branco);
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-image: linear-gradient(to bottom, var(--platina), var(--branco));
-    box-sizing: border-box;
-}
-
-#menu-nav ul {
-    list-style-type: none;
-    color: var(--azul);
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
-#menu-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-    cursor: pointer;
-}
-
-#menu-nav ul li a{
-    color: var(--azul);
-    text-decoration: none;
-}
-
-#menu-nav ul li a:hover {
-    transition: 0.5s ease;
-    text-decoration: underline;
-    color: var(--azul2);
-}
-
-button#tema {
     position: fixed;
-    top: 50px;
-    right: 50px;
-}
-
-/* Main */
-
-/* Sobre mim */
-
-section#sobre-mim {
-    background-color: var(--branco);
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 50px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    z-index: 5;
+    background-color: var(--branco);
 }
 
-#container-img img {
-    width: 350px;
-    height: 350px;
-    padding: 30px;
-    border-radius: 50px;
-}
-
-#texto-sobre-mim h1 {
-    color: var(--azul);
-    margin-bottom: 25px;
-    cursor: pointer;
-}
-
-#texto-sobre-mim h1:hover {
-    transition: 0.5s ease;
-    color: var(--azul2);
-}
-
-#texto-sobre-mim p {
+.logo a {
+    text-decoration: none;
     color: var(--preto);
-    width: 400px;
+    font-weight: 900;
+    font-size: 2em;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 25px;
+    transition: .8s ease;
 }
 
-/* Meus projetos */
+.logo a:hover {
+    border: 1px solid var(--preto);
+    box-shadow: 0px 0px 5px 2px var(--pretologo);
+}
 
-section#meus-projetos {
-    text-align: center;
+.menu-ul {
+    list-style: none;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    /* background-color: var(--platina); */
-}
-
-section#meus-projetos h1 {
-    color: var(--azul);
-    margin-bottom: 25px;
-    cursor: pointer;
-}
-
-section#meus-projetos h1:hover {
-    transition: 0.5s ease;
-    color: var(--azul2);
-}
-
-div#projetos {
-    width: 50%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-article.container-projeto {
-    background-color: var(--branco);
+.menu-ul a {
+    text-decoration: none;
+    color: var(--preto);
+    font-weight: 600;
+    position: relative;
+}
+
+.menu-ul a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: var(--preto);
+    transition: width 0.3s;
+}
+
+.menu-ul a:hover::after {
+    width: 100%;
+}
+
+main {
+    padding-top: 300px;
+}
+
+#sobre-mim {
+    display: flex;
+    margin: auto;
+    width: 900px;
+}
+
+.sobre-mim-info {
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    width: 50%;
+    padding-right: 50px;
     align-items: center;
     justify-content: center;
+}
+
+.sobre-mim-info h1 {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.sobre-mim-info p {
+    text-align: justify;
+}
+
+.sobre-mim-foto img {
+    border-radius: 50%;
+    border: 3px solid var(--preto);
+}
+
+#projetos {
+    margin-top: 200px;
+    text-align: center;
+}
+
+#projetos h2 {
+    font-size: 3em;
+    margin-bottom: 80px;
+}
+
+.container-projeto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
+    width: 900px;
+    margin-bottom: 80px;
     box-sizing: border-box;
 }
 
-article.container-projeto img {
-    margin: auto;
-    width: 300px;
+.info-projeto {
+    padding: 20px;
+    text-align: justify;
+    box-sizing: border-box;
 }
 
-article.container-projeto h2 {
-    color: var(--azul);
-    margin-top: 10px;
-    margin-bottom: 10px;
+.info-projeto h3 {
+    text-align: left;
+    font-size: 2em;
+    margin-bottom: 15px;
 }
 
-article.container-projeto button {
-    padding: 5px;
-    width: 120px;
-    margin: auto;
-    margin-bottom: 20px;
-    border: none;
-    background-color: transparent;
-    border-radius: 8px;
-    font-weight: bolder;
+.info-projeto p {
+    margin-bottom: 15px;
+}
+.info-projeto svg {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    background-color: var(--branco);
 }
 
-article.container-projeto a {
-    margin-top: 20px;
-    text-decoration: none;
-    background-color: transparent;
-    color: var(--preto);
-    font-weight: bolder;
-    font-size: 1.1em;
+.img-projeto img {
+    border-radius: 20px;
+    width: 450px;
+    height: 350px;
+    border: 3px solid var(--preto);
 }
-
-article.container-projeto a:hover {
-    transition: 0.5s ease;
-    text-decoration: underline;
-}
-
-/* Contato */
 
 footer {
+    background-color: var(--preto);
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-image: linear-gradient(to top, var(--platina), var(--branco));
 }
 
 footer svg {
-    height: 50px;
+    cursor: pointer;
     width: 50px;
-    margin: auto;
-    padding: 30px;
-    fill: var(--preto);
-}
-
-footer svg:hover {
-    fill: var(--azul2);
+    margin-right: 40px;
 }
