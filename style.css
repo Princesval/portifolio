@@ -10,6 +10,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -38,7 +39,8 @@ header {
     background-color: var(--branco);
 }
 
-button.nome-logo {
+/* CSS logo (começo) */
+a.nome-logo {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     display: inline-block;
     width: 12em;
@@ -52,13 +54,15 @@ button.nome-logo {
     transition: color 0.5s;
     z-index: 1;
     font-size: 17px;
+    text-align: center;
+    text-decoration: none;
     border-radius: 6px;
     font-weight: 500;
     color: var(--preto);
     background-color: var(--branco);
 }
 
-button.nome-logo:before {
+a.nome-logo:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -68,26 +72,28 @@ button.nome-logo:before {
     border-radius: 50%;
 }
 
-button.nome-logo:hover {
+a.nome-logo:hover {
     color: var(--branco);
 }
 
-button.nome-logo:before {
+a.nome-logo:before {
     top: 100%;
     left: 100%;
     transition: all 0.7s;
 }
 
-button.nome-logo:hover:before {
+a.nome-logo:hover:before {
     top: -30px;
     left: -30px;
 }
 
-button.nome-logo:active:before {
+a.nome-logo:active:before {
     background: var(--branco);
     transition: background 0s;
 }
+/* CSS logo (fim) */
 
+/* CSS menu (começo) */
 .menu-ul {
     list-style: none;
     display: flex;
@@ -117,15 +123,21 @@ button.nome-logo:active:before {
 .menu-ul a:hover::after {
     width: 100%;
 }
+/* CSS menu (fim) */
 
 main {
     padding-top: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 
 #sobre-mim {
     display: flex;
     margin: auto;
-    width: 900px;
+    max-width: 900px;
 }
 
 .sobre-mim-info {
@@ -167,7 +179,7 @@ main {
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 1200px;
+    max-width: 1200px;
     margin-bottom: 80px;
     box-sizing: border-box;
 }
@@ -249,8 +261,7 @@ footer svg {
     margin-right: 40px;
 }
 
-/* Animação de scroll */
-
+/* Animação de scroll (começo) */
 .reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -260,4 +271,58 @@ footer svg {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+/* Animação de scroll (fim)*/
+
+@media(max-width: 1200px) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #sobre-mim {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .sobre-mim-info {
+        width: 90%;
+        text-align: center;
+        padding-right: 0px;
+    }
+
+    .sobre-mim-info h1 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+
+    .sobre-mim-info p {
+        text-align: center;
+    }
+
+    .sobre-mim-foto img {
+        margin-top: 30px;
+    }
+
+    .container-projeto {
+        flex-direction: column;
+    }
+
+    .img-projeto {
+        max-width: 90%;
+    }
+
+    .reverse {
+        flex-direction: column-reverse;
+    }
+
+    .info-projeto {
+        width: 90%;
+    }
+    .div-svg {
+        display: flex;
+        justify-content: center;
+    }
 }
