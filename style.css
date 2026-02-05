@@ -167,7 +167,7 @@ main {
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 900px;
+    width: 1200px;
     margin-bottom: 80px;
     box-sizing: border-box;
 }
@@ -219,7 +219,7 @@ main {
 }
 
 .img-projeto {
-    max-width: 450px;
+    max-width: 600px;
     width: 100%;
     aspect-ratio: 16 / 9;
     border: 3px solid var(--preto);
