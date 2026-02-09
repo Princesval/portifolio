@@ -261,6 +261,10 @@ footer svg {
     margin-right: 40px;
 }
 
+footer p {
+    color: var(--branco);
+}
+
 /* Animação de scroll (começo) */
 .reveal {
     opacity: 0;
