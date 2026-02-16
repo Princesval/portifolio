@@ -259,12 +259,13 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 footer svg {
     cursor: pointer;
     width: 50px;
-    margin-right: 40px;
+    margin-right: 25px;
 }
 
 footer p {
@@ -334,5 +335,13 @@ footer p {
     .div-svg {
         display: flex;
         justify-content: center;
+    }
+
+    footer {
+    justify-content: space-around;
+    }
+
+    footer svg {
+    margin-right: 0px;
     }
 }
