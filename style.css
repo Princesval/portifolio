@@ -338,10 +338,10 @@ footer p {
     }
 
     footer {
-    justify-content: space-around;
+        justify-content: space-around;
     }
 
     footer svg {
-    margin-right: 0px;
+        margin-right: 0px;
     }
 }
