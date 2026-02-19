@@ -290,6 +290,12 @@ footer p {
     header {
         display: flex;
         flex-direction: column;
+        padding: 0px;
+    }
+
+    .menu-ul {
+        gap: 15px;
+        justify-content: space-around;
     }
 
     #sobre-mim {
@@ -310,7 +316,7 @@ footer p {
     }
 
     .sobre-mim-info p {
-        text-align: center;
+        text-align: justify;
     }
 
     .sobre-mim-foto img {
